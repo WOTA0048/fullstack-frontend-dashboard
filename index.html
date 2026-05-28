@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics & Match Tracker Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #f59e0b; /* Gold accent */
+            border-bottom: 2px solid #1e293b;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            background: #141b2d;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #1e293b;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 10px 5px 10px 0;
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 4px;
+        }
+        button {
+            background: #f59e0b;
+            color: #0b0f19;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover { background: #d97706; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #141b2d;
+            border: 1px solid #1e293b;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .card h3 { margin-top: 0; color: #fff; }
+        .odds { color: #10b981; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Analytics Dashboard</h1>
+        
+        <div class="form-group">
+            <h3>Add New Analytics Record</h3>
+            <input type="text" id="itemName" placeholder="Entry Name (e.g., Chelsea vs Real Madrid)">
+            <input type="text" id="itemType" placeholder="Category (e.g., Parlay, Ticket)">
+            <input type="number" id="itemOdds" step="0.01" placeholder="Odds / Value (e.g., 2.50)">
+            <button onclick="submitData()">Save to Database</button>
+        </div>
+
+        <h2>Stored Database Records</h2>
+        <div id="dataGrid" class="grid">
+            </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
